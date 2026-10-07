@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function GuessInput({ handleSubmitGuess }) {
   const [tentativeGuess, setTentativeGuess] = React.useState("");
@@ -18,6 +18,8 @@ function GuessInput({ handleSubmitGuess }) {
         type="text"
         maxLength={5}
         minLength={5}
+        pattern="[a-zA-Z]{5}"
+        title="5 letter word"
         value={tentativeGuess}
         onChange={(event) => {
           const nextGuess = event.target.value.toUpperCase();
